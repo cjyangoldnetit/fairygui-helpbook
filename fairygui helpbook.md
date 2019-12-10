@@ -6,7 +6,7 @@
 ::: info 
 注意:若在fairyGUI官網下載SDK(laya版)，請確認Branch版本(選layaair2.0-2.1)
 :::
-![](https://i.imgur.com/JTYRpE3.png)
+![](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/assets/laya2.png)
 
 ----
 #### 3.10版以上
@@ -41,10 +41,9 @@ digraph hierarchy {
 :::
 
 ----
-
 # 關聯設置方式
-:::info 
-#### 父子層級概念:
+:::info
+**父子層級概念:**
 先選子物件，指定關聯父物件，便可定義其關係; 父層級移動，子層級按定義關係相對移動
 :::
 #### TA應用
@@ -60,33 +59,78 @@ digraph hierarchy {
 # 圖片
 #### 1. Mask
 >ex:如欲達到光暈遮罩
->![](https://i.imgur.com/Le1Lriw.gif "ex:如欲達到光暈遮罩")
+>![](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/assets/mask.gif "ex:如欲達到光暈遮罩")
 >
 >點選空白處，於「基本設置」內設定「自定義遮罩」(選遮罩物件)
-![](https://i.imgur.com/LnZtgQa.png)
+![](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/assets/maskMethod.png)
 
 #### 2. 透明度
 >可於「基本」設置透明度
+![image alt](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/assets/basic%20settings%20window.png "基本設置" =250x315)
 
 #### 3. Anchor
 >人像圖片設中心「錨點」:
 由於前端可能需要派獎(動畫)跑向人像中心，故採此做法
 
        {anchor="true" }
+#### TA應用
+<table>
+  <thead>
+    <tr>
+      <th style="text-align:left">圖</th>
+      <th style="text-align:left">規格</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <tr>
+      <td style="text-align:left">前綴_場景內圖片</td>
+      <td style="text-align:left">
+        只要是圖片類都由「img」起始，例如：imgBg、imgMask等。
+      </td>
+    </tr>
+        <td style="text-align:left">玩家頭像</td>
+      <td style="text-align:left">
+        110x110
+      </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">大廳頭像</td>
+      <td style="text-align:left">
+        180x180，男女性各8張供玩家選擇
+      </td>
+    </tr>      
+    <tr>
+        <td style="text-align:left">選房頁配色</td>
+      <td style="text-align:left">
+        新手（綠）一般（藍）高手（金）富豪（紅）
+      </td>
+    </tr>
+    <tr>
+        <td style="text-align:left">籌碼顏色</td>
+      <td style="text-align:left">
+        <p>順序統一為：綠、藍、紫、黃、紅順序統一為：綠、藍、紫、黃、紅</p>
+         <p>美術+TA 命名規範請見下一個表第9行<a href="https://docs.google.com/spreadsheets/d/1VvXlGmQd1MNvXxt9-uZvaDmZHKGJDPsi0vukVBepIAI/edit#gid=0">link</a>
+ </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 ---
-#### 控制器
+# 控制器
 將控制器導出至其他場景:
-![](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/.gitbook/assets/screen-shot-2019-10-23-at-15.50.02.png "將控制器導出至其他場景")
+![](https://github.com/cjyangoldnetit/FairyGUI_HelpBook/blob/master/assets/ctrlExport.png?raw=true "將控制器導出至其他場景")
 
 **~~控制彈窗~~**
 ~~將動作>改變其他控制器頁面，可用Button控制彈窗:~~
-![action_page](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/assets/ctrlWin.gif)
+{%youtube omKqI-6VMw0 %}
 
 ![image alt](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/assets/ctrlWin.png =565x1149)
 
 #### 命名原則
-控制器命名時，請避開重覆名稱; 在發佈ts後，相同name會自動命名而無法從xml查到:
-![ctrlname](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/.gitbook/assets/ctrlname.png)
+控制器命名時，請避免重覆名稱; 在發佈ts後，相同name會自動命名而無法從xml查到:
+![ctrlname](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/assets/ctrlName.png "控制器重覆名稱")
 
 #### TA應用
 
@@ -98,11 +142,30 @@ digraph hierarchy {
     </tr>
   </thead>
   <tbody>
-    <tr>
+      <tr>
       <td style="text-align:left">語系控制器</td>
       <td style="text-align:left">
         <p>簡中: 「zh-CN」</p>
         <p>英文:「en-US」(注意大小寫)</p>
+      </td>
+    </tr>
+     <tr>
+      <td style="text-align:left">前綴_組件</td>
+      <td style="text-align:left">
+        <p>若是由數個元件組成的組成，放置在主場景上，命名一律由「com」起始，</p>例如：btnOne 與 btnTwo 與 btnThree 三個按鈕組成一個組件，再放到場景上，則該組件在場景上的命名範例為</p>「comBtnGroup」</p>
+      </td>
+    </tr>
+      <tr>
+      <td style="text-align:left">語系_元件命名</td>
+      <td style="text-align:left">
+        <p>若元件有二種語系，場景上的命名請依循控制器的寫法，</p>取最後二個大寫字母作為語系識別寫在最後。</p>
+        <p>例如：labelGameStartCN、labelGameStartUS。</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">前綴_群組</td>
+      <td style="text-align:left">
+        <p>場景內使用群組工具，命名請以「group」起始，例如：groupGlow。</p>
       </td>
     </tr>
   </tbody>
@@ -132,7 +195,7 @@ digraph hierarchy {
     <tr>
       <td style="text-align:left">系統按鈕(選廳頁)</td>
       <td style="text-align:left">
-        <p>不勾「選中</p>
+        <p>不勾「選中」</p>
         <p>不連接場景</p>
         <p>設為普通按鈕 (由前端設定動作)</p>
       </td>
@@ -176,25 +239,20 @@ digraph hierarchy {
 請關掉自動播放，由前端控制。
 :::
 
-#### 首幀設Key
-
-由於動效在repeat時，會跳回第一個key幀，故在此建議第一幀無論有否動態，都Key下第一幀
-
-![](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/.gitbook/assets/screen-shot-2019-09-24-at-11.39.56.png)
-
 #### 鎖定
 
-![lock](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/.gitbook/assets/lock.png)
+>鎖定元件就不會無故移動到某些元件
 
 #### 緩動函數
 
 詳見[參考](https://greensock.com/ease-visualizer)
 
-#### 動效因果關係
+#### 首幀設Key
 
-![](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/.gitbook/assets/oct-29-2019-17-51-09.gif)
+由於動效在repeat時，會跳回第一個key幀，故在此建議第一幀無論有否動態，都Key下第一幀
 
-![](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/.gitbook/assets/screen-shot-2019-10-29-at-17.55.51.png)
+下例為動效因果關係造成:
+![](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/assets/keyTrans.png)
 
 #### TA應用
 
@@ -220,9 +278,7 @@ digraph hierarchy {
 Dragonbone=dragonbone/three_cards_girl.sk,L,B
 ```
 
-![](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/.gitbook/assets/dbref.png)
-
-![](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/.gitbook/assets/dbcode.png)
+![](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/assets/dragonBone.png)
 
 ---
 # errors
@@ -235,9 +291,15 @@ Dragonbone=dragonbone/three_cards_girl.sk,L,B
 
 ![](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/.gitbook/assets/bug01.jpg)
 
+![image alt](https://raw.githubusercontent.com/cjyangoldnetit/FairyGUI_HelpBook/master/assets/xml_2.png "不同專案" )
+
 #### 解決方式
 
 由於fairy會預設將控制器裝載到此場景，每次更動一律需要手動選定某一項目，否則預設會以目前狀態裝載，最終導致悄悄存檔而無所知。
+
+:::warning
+另外，若為求保險，亦可再確認XML的變動狀態，再依情況手動XML調整。
+:::
 
 #### 待解
 
@@ -250,7 +312,7 @@ Dragonbone=dragonbone/three_cards_girl.sk,L,B
 
 #### 預設字體
 
-雖有預設字體，為確保xml會有字體註解，請逐一個別選定字體; _"這樣xml 才有註解字體"_。
+雖有預設字體，為確保xml會有字體註解(Microsoft YaHei)，請逐一個別選定字體; _"這樣xml 才有註解字體"_。
 
 #### 靜態文字
 
@@ -270,33 +332,31 @@ Dragonbone=dragonbone/three_cards_girl.sk,L,B
 
 #### TA應用
 
->文本行距 一律改為0 \(預設為3\)
+>文本行距：單行文本一律改為0，多行文本時的行高，由設計端決定。
 
 <table>
   <thead>
     <tr>
       <th style="text-align:center">選廳頁</th>
-      <th style="text-align:left">規格</th>
+      <th style="text-align:center">規格</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:center">玩家ID</td>
-      <td style="text-align:left">不論中英文，最多為13個字元
+      <td style="text-align:left">不論中英文，最多為13個字元，字型最小20pt
         <br
-        />指定寬高後「自動縮放」
+        />指定text外框符合全文字的寬高後再勾選「自動縮放」
         <br
-        />最小20pt</td>
+        />以利前端使用
+        </td>
     </tr>
     <tr>
-      <td style="text-align:center"> 選房金額</td>
+      <td style="text-align:center">選房金額</td>
       <td style="text-align:left">
-        <p>最多5位數(含小數點)</p>
-        <p>小數位: 最多至小數第2位</p>
-        <p>ex: 99.99, 999.99</p>
-        <p>遇千則變K</p>
-        <p>實際金額最多6位數(此情況由前端控制),
-          999.99K</p>
+        最多5位數(含小數點)<br>
+        小數位: 最多至第2位(範例：99.99 或 999.99)遇千則變“K”<br>
+        實際金額最多6位數，此情況由前端控制(範例：999.99K)
       </td>
     </tr>
   </tbody>
@@ -304,7 +364,7 @@ Dragonbone=dragonbone/three_cards_girl.sk,L,B
   <thead>
     <tr>
       <th style="text-align:center">主遊戲</th>
-      <th style="text-align:left">規格</th>
+      <th style="text-align:center">規格</th>
     </tr>
   </thead>
   <tbody>
@@ -380,6 +440,12 @@ Dragonbone=dragonbone/three_cards_girl.sk,L,B
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td style="text-align:center">百人遊戲名稱英譯</td>
+      <td style="text-align:left">
+        <p>百人統一翻為「For Hundred People」且字較小在第二行，日後以好辨識的ICON呈現</p>
+      </td>
+    </tr>
     <tr>
       <td style="text-align:center">側表玩家ID</td>
       <td style="text-align:left">
@@ -477,8 +543,8 @@ Dragonbone=dragonbone/three_cards_girl.sk,L,B
       <td style="text-align:left">全遊戲統一</td>
     </tr>
     <tr>
-      <td style="text-align:left">語系(彈窗)</td>
-      <td style="text-align:left">沒有X按鈕</td>
+      <td style="text-align:left">彈窗X按鈕</td>
+      <td style="text-align:left">僅「結算」、「幫助」等，無關閉按鈕的才有×的關閉按鈕，其餘皆無</td>
     </tr>
     <tr>
       <td style="text-align:left">error code(彈窗)</td>
@@ -486,7 +552,7 @@ Dragonbone=dragonbone/three_cards_girl.sk,L,B
         <p>遊戲進行前、後，僅用「確認」按鈕</p>
         <p>軸心:中心(0.5)</p>
         <p>勿設「自動播放」</p>
-        <p>進出場動效命名: zoomin / zoomout</p>
+        <p>進出場動效命名: transZoomin / transZoomout</p>
         <p>無需置於場景，個別設置為導出</p>
       </td>
     </tr>
@@ -537,7 +603,7 @@ open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args
 >上傳至git之前，請確認資料夾內有無錯誤檔案
 
 
-ex: osx 在publish後，會將發佈檔案夾隱藏在專案根目錄之下 ，請將該隱藏檔案刪除乾淨再上傳。
+ex: osx 在發佈後，會將發佈檔案夾隱藏在專案根目錄之下 ，請將該隱藏檔案刪除乾淨再上傳。
 
 terminal
 ```
